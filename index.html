@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Operations</title>
+    <script language="javascript">
+        function fact(){
+            var num=document.forms["frm1"].num.value;
+            document.forms["frm1"].fa.value;
+            if(isNaN(num)){
+                alert("Not a Number");
+            }
+            else if(num<0 || num>999){
+                alert("Out of Range");
+            }
+            else if(num==0 || num==1){
+                fa=1;
+            }
+            else{
+                var fa=1;
+                while(num!=0){
+                    fa=fa*num;
+                    num--;
+                }
+            }
+            document.forms["frm1"].fa.value=fa;
+        }
+
+        function fib(){
+            var num=document.forms["frm2"].num.value;
+            document.forms["frm2"].fi.value;
+            if(isNaN(num)){
+                alert("Not a number");
+            }
+            else{
+                var a=0;
+                var b=1;
+                var c=a+b;
+                document.write(a+" "+b+" "+c+" ");
+                while(num!=3){
+                    num--;
+                    a=b;
+                    b=c;
+                    c=a+b;
+                    document.write(c+" ")
+                }
+            }
+        }
+
+        function palindrome(){
+            var num=document.forms["frm3"].num.value;
+            document.forms["frm3"].pal.value="";
+            if(isNaN(num)){
+                alert("Not a Number");
+            }
+            else{
+                var n=num;
+                var c=0;
+                var r;
+                while(parseInt(num)!=0){
+                    r=parseInt(num)%10;
+                    num=num/10;
+                    c=c*10+r;
+                }
+                if(c==n){
+                    pal="True";
+                }
+                else{
+                    pal="False"
+                }
+                document.forms["frm3"].pal.value=pal;
+            }
+        }
+
+        function PrimeNumber(){
+            var snum=document.forms["frm4"].snum.value;
+            //var lnum=document.forms["frm4"].lnum.value;
+            document.forms["frm4"].start.value;
+            //document.forms["frm4"].last.value;
+            if(isNaN(snum)){
+                alert("Not a Number");
+            }
+            //if(isNaN(lnum)){
+              //  alert("Not a Number");
+            //}
+            else{
+                for(var i=2;i<=snum;i++){
+                    var flag=0;
+                    for(var j=2;j<i;j++){
+                        if(i%j==0){
+                            flag=1;
+                            break;
+                        }
+                    }
+                    if(flag==0){
+                        document.write(i+" ");
+                    }
+                }
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <form name="frm1">
+        <center><h3>To Get Factorial</h3></center>
+        <br>
+        <center>Enter a Number:<input type="text" name="num"></center>
+        <br>
+        <center><input type="button" name="number" value="factorial of a number" onclick="fact()"></center>
+        <br><br>
+        <center>Factorial of a number:<input type="text" name="fa"></center>
+    </form>
+
+    <form name="frm2">
+        <center><h3>To get Fibanocci Series</h3></center>
+        <br>
+        <center>Enter a Number:<input type="text" name="num"></center>
+        <br>
+        <center><input type="button" name="number" value="fibnacci series" onclick="fib()"></center>
+        <br><br>
+        <center>Fibanocci Series is:<input type="text" name="fi"</center>
+    </form>
+    
+    <form name="frm3">
+        <center><h3>To check Wether a palindrome number or not</h3></center>
+        <br>
+        <center>Enter a Number:<input type="text" name="num"></center>
+        <br>
+        <center><input type="button" name="number" value="palindrome" onclick="palindrome()"></center>
+        <br><br>
+        <center>Is palindrome or not:<input type="text" name="pal"></center>
+    </form>
+
+        <form name="frm4">
+            <center><h3>To Get PrimeNumber in a Range</h3></center>
+            <br>
+            <center>Enter start Number:<input type="text" name="snum"></center>
+            <br>
+            <center>Enter end Number:<input type="text" name="lnum"></center>
+            <br>
+            <center><input type="button" name="number" value="prime range" onclick="PrimeNumber()"></center>
+            <br><br>
+            <center>PrimeNumber Range:<input type="text" name="start""><center>
+        </form>
+
+</body>
+
+</html>
