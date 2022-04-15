@@ -3,6 +3,32 @@
 
 <head>
     <title>Operations</title>
+    <style>
+        .factorial{
+            border-style: dashed;
+            padding-bottom: 10px;
+            background-color: aqua;
+        }
+        .fib{
+            border-style: dashed;
+            padding-bottom: 10px;
+            margin-top: 10px;
+            background-color: bisque;
+        }
+        .palindrome{
+            border-style: dashed;
+            padding-bottom: 10px;
+            margin-top: 10px;
+            background-color: yellow;
+        }
+        .prime{
+            border-style: dashed;
+            padding-bottom: 10px;
+            margin-top: 10px;
+            background-color: chartreuse;
+        }
+    </style>
+
     <script language="javascript">
         function fact(){
             var num=document.forms["frm1"].num.value;
@@ -110,6 +136,7 @@
 
 <body>
     <form name="frm1">
+        <div class="factorial">
         <center><h3>To Get Factorial</h3></center>
         <br>
         <center>Enter a Number:<input type="text" name="num"></center>
@@ -117,9 +144,11 @@
         <center><input type="button" name="number" value="factorial of a number" onclick="fact()"></center>
         <br><br>
         <center>Factorial of a number:<input type="text" name="fa"></center>
+        </div>
     </form>
 
     <form name="frm2">
+        <div class="fib">
         <center><h3>To get Fibanocci Series</h3></center>
         <br>
         <center>Enter a Number:<input type="text" name="num"></center>
@@ -127,9 +156,11 @@
         <center><input type="button" name="number" value="fibnacci series" onclick="fib()"></center>
         <br><br>
         <center>Fibanocci Series is:<input type="text" name="fi"</center>
+        </div>
     </form>
     
     <form name="frm3">
+        <div class="palindrome">
         <center><h3>To check Wether a palindrome number or not</h3></center>
         <br>
         <center>Enter a Number:<input type="text" name="num"></center>
@@ -137,9 +168,11 @@
         <center><input type="button" name="number" value="palindrome" onclick="palindrome()"></center>
         <br><br>
         <center>Is palindrome or not:<input type="text" name="pal"></center>
+        </div>
     </form>
 
         <form name="frm4">
+            <div class="prime">
             <center><h3>To Get PrimeNumber in a Range</h3></center>
             <br>
             <center>Enter start Number:<input type="text" name="snum"></center>
@@ -148,7 +181,8 @@
             <br>
             <center><input type="button" name="number" value="prime range" onclick="PrimeNumber()"></center>
             <br><br>
-            <center>PrimeNumber Range:<input type="text" name="prime"><center>
+            <center>PrimeNumber Range:<input type="text" name="prime"></center>
+            </div>
         </form>
 
 </body>
