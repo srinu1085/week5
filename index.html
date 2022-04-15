@@ -36,14 +36,18 @@
                 var a=0;
                 var b=1;
                 var c=a+b;
-                document.write(a+" "+b+" "+c+" ");
+                var arr=[];
+                arr.push(a);
+                arr.push(b);
+                arr.push(c);
                 while(num!=3){
                     num--;
                     a=b;
                     b=c;
                     c=a+b;
-                    document.write(c+" ")
+                    arr.push(c);
                 }
+                document.forms["frm2"].fi.value=arr;
             }
         }
 
@@ -74,17 +78,17 @@
 
         function PrimeNumber(){
             var snum=document.forms["frm4"].snum.value;
-            //var lnum=document.forms["frm4"].lnum.value;
-            document.forms["frm4"].start.value;
-            //document.forms["frm4"].last.value;
+            var lnum=document.forms["frm4"].lnum.value;
+            document.forms["frm4"].prime.value;
             if(isNaN(snum)){
                 alert("Not a Number");
             }
-            //if(isNaN(lnum)){
-              //  alert("Not a Number");
-            //}
+            if(isNaN(lnum)){
+                alert("Not a Number");
+            }
             else{
-                for(var i=2;i<=snum;i++){
+                var arr=[];
+                for(var i=snum;i<=lnum;i++){
                     var flag=0;
                     for(var j=2;j<i;j++){
                         if(i%j==0){
@@ -93,9 +97,10 @@
                         }
                     }
                     if(flag==0){
-                        document.write(i+" ");
+                        arr.push(i);
                     }
                 }
+                document.forms["frm4"].prime.value=arr;
             }
         }
 
@@ -143,9 +148,11 @@
             <br>
             <center><input type="button" name="number" value="prime range" onclick="PrimeNumber()"></center>
             <br><br>
-            <center>PrimeNumber Range:<input type="text" name="start""><center>
+            <center>PrimeNumber Range:<input type="text" name="prime"><center>
         </form>
 
 </body>
 
 </html>
+
+<!--https://srinu1085.github.io/week5/-->
